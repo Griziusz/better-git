@@ -1,0 +1,4 @@
+[alias]
+	better-push = !git add -A >/dev/null 2>&1 && git commit --amend --no-edit >/dev/null 2>&1 && git push -f >/dev/null 2>&1 && echo "Successfully pushed!" || echo "Something went wrong. Please restrain yourself from using non-better-git commands!"
+	better-pull = !git fetch >/dev/null 2>&1 && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD) >/dev/null 2>&1 && git clean -dfx >/dev/null 2>&1 && echo "Succefully pulled!" || echo "Something went wrong. Please restrain yourself from using non-better-git commands!"
+
